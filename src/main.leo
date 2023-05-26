@@ -101,8 +101,8 @@ program exchange.aleo {
         let account: Account = Mapping::get(accounts, order.addr); 
         Mapping::set(accounts, order.addr, Account {
             Aleo : Token {
-                amount:account.Aleo.amount - order.qty,
-                lock:account.Aleo.lock + order.qty,
+                amount:account.Aleo.amount,
+                lock:account.Aleo.lock,
             },
             Usdt:Token {
                 amount:account.Usdt.amount - order.amount - order.commission,
@@ -441,7 +441,7 @@ program exchange.aleo {
         let account: Account = Mapping::get(accounts, addr);
         let aleo_amount:u64 = account.Aleo.amount;
         let usdt_amount:u64 = account.Usdt.amount;
-        
+
         if(token == 1u64) {
             aleo_amount = aleo_amount - amount;
         } else if(token == 2u64) {
