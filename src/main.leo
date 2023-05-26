@@ -380,8 +380,8 @@ program exchange.aleo {
                 lock:act.Aleo.lock,
             },
             Usdt:Token{
-                amount:act.Usdt.amount,
-                lock:act.Usdt.lock + commission,
+                amount:act.Usdt.amount + commission,
+                lock:act.Usdt.lock,
             },
         });
     }
