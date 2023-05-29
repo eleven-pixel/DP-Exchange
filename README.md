@@ -1,8 +1,8 @@
-# exchange.aleo
+# An simple Aleo decentralized exchange in Leo.
 
-## Build Guide
+## How to Build
 
-To compile this Aleo program, run:
+To compile this Leo program, run:
 ```bash
 leo build
 ```
