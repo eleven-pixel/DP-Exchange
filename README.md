@@ -1,4 +1,4 @@
-# An simple Aleo decentralized exchange in Leo.
+# An simple decentralized exchange in Leo.
 
 ## How to Build
 
