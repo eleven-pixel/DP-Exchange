@@ -23,8 +23,8 @@ program exchange.aleo {
         price: u64,
         amount:u64,
         commission:u64,
-        deal_amount:u64,
-        deal_commission:u64,
+        lock_amount:u64,
+        lock_commission:u64,
         is_success:bool,
         is_cancel:bool,
     }
@@ -51,13 +51,13 @@ program exchange.aleo {
             price: price,
             amount:amount,
             commission:commission,
-            deal_amount:amount,
-            deal_commission:commission,
+            lock_amount:0u64,
+            lock_commission:0u64,
             is_success:false,
             is_cancel:false,
         };
         return Ask {
-            owner: aleo1wzgkaj0tdezlunuh52sc5e65c9n2w7r57sn8h7ph76vrr3mv8grslk9n57,
+            owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv,
             order:order,
         } then finalize(order);
     }
@@ -86,13 +86,13 @@ program exchange.aleo {
             price: price,
             amount:amount,
             commission:commission,
-            deal_amount:amount,
-            deal_commission:commission,
+            lock_amount:amount,
+            lock_commission:commission,
             is_success:false,
             is_cancel:false,
         };
         return Bid {
-            owner: aleo1wzgkaj0tdezlunuh52sc5e65c9n2w7r57sn8h7ph76vrr3mv8grslk9n57,
+            owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv,
             order:order,
         } then finalize(order);
     }
@@ -105,8 +105,8 @@ program exchange.aleo {
                 lock:account.Aleo.lock,
             },
             Usdt:Token {
-                amount:account.Usdt.amount - order.amount - order.commission,
-                lock:account.Usdt.lock + order.amount + order.commission,
+                amount:account.Usdt.amount - order.lock_amount - order.lock_commission,
+                lock:account.Usdt.lock + order.lock_amount + order.lock_commission,
             }
         }); 
     }
@@ -119,8 +119,8 @@ program exchange.aleo {
             price: ask.order.price,
             amount:ask.order.amount,
             commission:ask.order.commission,
-            deal_amount:ask.order.amount,
-            deal_commission:ask.order.deal_commission,
+            lock_amount:ask.order.lock_amount,
+            lock_commission:ask.order.lock_commission,
             is_success:ask.order.is_success,
             is_cancel:true,
         };
@@ -152,8 +152,8 @@ program exchange.aleo {
             price: bid.order.price,
             amount:bid.order.amount,
             commission:bid.order.commission,
-            deal_amount:bid.order.amount,
-            deal_commission:bid.order.deal_commission,
+            lock_amount:bid.order.lock_amount,
+            lock_commission:bid.order.lock_commission,
             is_success:bid.order.is_success,
             is_cancel:true,
         };
@@ -171,15 +171,15 @@ program exchange.aleo {
                 lock:account.Aleo.lock ,
             },
             Usdt:Token{
-                amount:account.Usdt.amount + order.amount,
-                lock:account.Usdt.lock - order.amount,
+                amount:account.Usdt.amount + order.lock_amount + order.lock_commission,
+                lock:account.Usdt.lock - order.lock_amount - order.lock_commission ,
             },
         });
     }
 
     // deal.
     transition deal(ask1: Ask,ask2: Ask,ask3: Ask, bid1: Bid, bid2: Bid, bid3: Bid) -> (Ask,Ask,Ask,Bid,Bid,Bid) {
-        assert_eq(self.caller, aleo1wzgkaj0tdezlunuh52sc5e65c9n2w7r57sn8h7ph76vrr3mv8grslk9n57);
+        assert_eq(self.caller, aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv);
         
         let ask1_success:bool = ask1.order.is_success;
         let ask2_success:bool = ask2.order.is_success;
@@ -244,13 +244,13 @@ program exchange.aleo {
             bid3_amount = ask3.order.amount;
         }  
 
-        let ask1_order :Order = clone(ask1.order,ask1.order.amount,ask1.order.amount,ask1_success);
-        let ask2_order :Order = clone(ask2.order,ask1.order.amount,ask2.order.amount,ask2_success);
-        let ask3_order :Order = clone(ask3.order,ask1.order.amount,ask3.order.amount,ask3_success);
+        let ask1_order: Order = clone(ask1.order,ask1.order.amount,ask1.order.commission,ask1_success);
+        let ask2_order: Order = clone(ask2.order,ask1.order.amount,ask2.order.commission,ask2_success);
+        let ask3_order: Order = clone(ask3.order,ask1.order.amount,ask3.order.commission,ask3_success);
 
-        let bid1_order :Order = clone(bid1.order,bid1_amount,calculate_commission(bid1_amount),bid1_success);
-        let bid2_order :Order = clone(bid2.order,bid2_amount,calculate_commission(bid2_amount),bid2_success);
-        let bid3_order :Order = clone(bid3.order,bid3_amount,calculate_commission(bid3_amount),bid3_success);
+        let bid1_order: Order = clone(bid1.order,bid1_amount,calculate_commission(bid1_amount),bid1_success);
+        let bid2_order: Order = clone(bid2.order,bid2_amount,calculate_commission(bid2_amount),bid2_success);
+        let bid3_order: Order = clone(bid3.order,bid3_amount,calculate_commission(bid3_amount),bid3_success);
 
         return (
             Ask {
@@ -335,11 +335,11 @@ program exchange.aleo {
                     lock:account.Aleo.lock,
                 },
                 Usdt:Token{
-                    amount:account.Usdt.amount + (bid1.amount - bid1.deal_amount) + (bid1.commission - bid1.deal_commission),
-                    lock:account.Usdt.lock - bid1.amount - bid1.commission,
+                    amount:account.Usdt.amount + (bid1.lock_amount - bid1.amount) + (bid1.lock_commission - bid1.commission),
+                    lock:account.Usdt.lock - bid1.lock_amount - bid1.lock_commission,
                 },
             });
-            commission = commission + bid1.deal_commission;
+            commission = commission + bid1.commission;
         } 
 
         if (bid2.is_success == true) {
@@ -350,11 +350,11 @@ program exchange.aleo {
                     lock:account.Aleo.lock,
                 },
                 Usdt:Token{
-                    amount:account.Usdt.amount + (bid2.amount - bid2.deal_amount) + (bid2.commission - bid2.deal_commission),
-                    lock:account.Usdt.lock - bid2.amount - bid2.commission,
+                    amount:account.Usdt.amount + (bid2.lock_amount - bid2.amount) + (bid2.lock_commission - bid2.commission),
+                    lock:account.Usdt.lock - bid2.lock_amount - bid2.lock_commission,
                 },
             });
-            commission = commission + bid2.deal_commission;
+            commission = commission + bid2.commission;
         } 
 
         if (bid3.is_success == true) {
@@ -365,13 +365,13 @@ program exchange.aleo {
                     lock:account.Aleo.lock,
                 },
                 Usdt:Token{
-                    amount:account.Usdt.amount + (bid3.amount - bid3.deal_amount) + (bid3.commission - bid3.deal_commission),
-                    lock:account.Usdt.lock - bid3.amount - bid3.commission,
+                    amount:account.Usdt.amount + (bid3.lock_amount - bid3.amount) + (bid3.lock_commission - bid3.commission),
+                    lock:account.Usdt.lock - bid3.lock_amount - bid3.lock_commission,
                 },
             });
-            commission = commission + bid3.deal_commission;
+            commission = commission + bid3.commission;
         }
-        let addr:address = aleo1wzgkaj0tdezlunuh52sc5e65c9n2w7r57sn8h7ph76vrr3mv8grslk9n57;
+        let addr:address = aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv;
 
         let act: Account = Mapping::get(accounts, addr);
         Mapping::set(accounts,  addr, Account {
@@ -380,7 +380,7 @@ program exchange.aleo {
                 lock:act.Aleo.lock,
             },
             Usdt:Token{
-                amount:act.Usdt.amount + commission,
+                amount:act.Usdt.amount+ commission,
                 lock:act.Usdt.lock,
             },
         });
@@ -460,16 +460,16 @@ program exchange.aleo {
         });
     }
 
-    // clone a order and reset deal_amount,deal_commission,is_success
+    // clone a order and reset amount,commission,is_success
     function clone(order: Order,amount:u64,commission:u64,is_success: bool) -> Order {
         return Order {
             addr: order.addr,
             qty:order.qty,
             price: order.price,
-            amount:order.amount,
-            commission:order.commission,
-            deal_amount:amount,
-            deal_commission:commission,
+            amount:amount,
+            commission:commission,
+            lock_amount:order.lock_amount,
+            lock_commission:order.lock_commission,
             is_success:is_success,
             is_cancel:order.is_cancel,
         };
