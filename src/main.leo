@@ -254,27 +254,27 @@ program exchange.aleo {
 
         return (
             Ask {
-                owner:ask1.owner,
+                owner:ask1.order.addr,
                 order:ask1_order,
             },
             Ask {
-                owner:ask2.owner,
+                owner:ask2.order.addr,
                 order:ask2_order,
             },
             Ask {
-                owner:ask3.owner,
+                owner:ask3.order.addr,
                 order:ask3_order,
             },
             Bid {
-                owner:bid1.owner,
+                owner:bid1.order.addr,
                 order:bid1_order,
             },
             Bid {
-                owner:bid2.owner,
+                owner:bid2.order.addr,
                 order:bid2_order,
             },
             Bid {
-                owner:bid3.owner,
+                owner:bid3.order.addr,
                 order:bid3_order,
             }
         ) then finalize(ask1_order,ask2_order,ask3_order,bid1_order,bid2_order,bid3_order);
