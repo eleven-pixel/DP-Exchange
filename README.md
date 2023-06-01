@@ -8,9 +8,9 @@ leo build
 ```
 ask1
 aleo1d937cyk52y9zjdveu342hy8epqd6lj3dgrregerxweer09a0zurqez8h4f
-
+```bash
 leo run recharge 100u64 1u64
-
+```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
   from: aleo1d937cyk52y9zjdveu342hy8epqd6lj3dgrregerxweer09a0zurqez8h4f.private,
