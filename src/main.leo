@@ -245,8 +245,8 @@ program exchange.aleo {
         }  
 
         let ask1_order: Order = clone(ask1.order,ask1.order.amount,ask1.order.commission,ask1_success);
-        let ask2_order: Order = clone(ask2.order,ask1.order.amount,ask2.order.commission,ask2_success);
-        let ask3_order: Order = clone(ask3.order,ask1.order.amount,ask3.order.commission,ask3_success);
+        let ask2_order: Order = clone(ask2.order,ask2.order.amount,ask2.order.commission,ask2_success);
+        let ask3_order: Order = clone(ask3.order,ask3.order.amount,ask3.order.commission,ask3_success);
 
         let bid1_order: Order = clone(bid1.order,bid1_amount,calculate_commission(bid1_amount),bid1_success);
         let bid2_order: Order = clone(bid2.order,bid2_amount,calculate_commission(bid2_amount),bid2_success);
