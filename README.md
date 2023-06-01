@@ -1,4 +1,4 @@
-# An simple exchange in Leo.
+# An exchange in Leo.
 
 ## How to Build
 
