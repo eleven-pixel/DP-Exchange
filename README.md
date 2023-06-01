@@ -23,6 +23,7 @@ leo run recharge 100u64 1u64
 ```bash
 leo run sell 10u64 8000u64
 ```
+```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
   order: {
@@ -38,11 +39,12 @@ leo run sell 10u64 8000u64
   },
   _nonce: 8025945051726748785443184839556329052313081507950230053430467825425349799494group.public
 }
-
+```
 ask2
 aleo1pd4cjynclvdggxssen4mtkq3k5n05yjzheq4znymm6fpww8dtyyq4x2g2y
 ```bash
 leo run recharge 100u64 1u64
+```
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -51,8 +53,10 @@ leo run recharge 100u64 1u64
   token: 1u64.private,
   _nonce: 3800332007030594478763503223664734023003143826541351793609558284828806359604group.public
 }
+```
 ```bash
 leo run sell 10u64 9000u64
+```
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -69,11 +73,12 @@ leo run sell 10u64 9000u64
   },
   _nonce: 2839946431037416880466008217093611151634614201832426838388903272590633097513group.public
 }
-
+```
 ask3
 aleo130tgenu0mm5q8w4aeuyh0tasn0upjvuw79f95rvkgegqcexx3vrs200myj
 ```bash
 leo run recharge 100u64 1u64
+```
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -82,8 +87,10 @@ leo run recharge 100u64 1u64
   token: 1u64.private,
   _nonce: 3170745149276121778182051766130114136917395704539229756533491191336946104113group.public
 }
+```
 ```bash
 leo run sell 10u64 10000u64
+```
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -100,11 +107,12 @@ leo run sell 10u64 10000u64
   },
   _nonce: 7352583952641935574364645614105925240401543128677821398212401268563487927543group.public
 }
-
+```
 bid1
 aleo1xc7czkvea9ahdehlnfhyh4z3es3dwzrnara7dtpeg02qw9whaqzqpwdmku
 ```bash
 leo run recharge 1000000u64 2u64
+```
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -113,8 +121,10 @@ leo run recharge 1000000u64 2u64
   token: 2u64.private,
   _nonce: 2684942928921043068294067380977603757282813843730087321828063743997233052094group.public
 }
+```
 ```bash
 leo run buy 10u64 8500u64
+```
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -131,11 +141,12 @@ leo run buy 10u64 8500u64
   },
   _nonce: 4530731037460519668561805175351274086146348208680541101964835222934249438026group.public
 }
-
+```
 bid2
 aleo14eeuqt6r4rwv48qfn8zw0u88dp492enusfzqwnd3nqnelmjnlq9q9xtmtc
 ```bash
 leo run recharge 1000000u64 2u64
+```
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -144,8 +155,10 @@ leo run recharge 1000000u64 2u64
   token: 2u64.private,
   _nonce: 3729501026213141842762978810389555041744596741244985342272995190168343002285group.public
 }
+```
 ```bash
 leo run buy 10u64 7500u64
+```
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -162,11 +175,12 @@ leo run buy 10u64 7500u64
   },
   _nonce: 464528667014153859546473286219448319112577829982347333482223390885735402492group.public
 }
-
+```
 bid3
 aleo1t6dckz3q43cjxzg9m5pn5w48x346qdpjz39nwy9en3yqczvhzczsyqhjdd
 ```bash
 leo run recharge 1000000u64 2u64
+```
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -175,8 +189,10 @@ leo run recharge 1000000u64 2u64
   token: 2u64.private,
   _nonce: 2452043916860789182961799394552689947399410952225123161840172711753052500466group.public
 }
+```
 ```bash
 leo run buy 10u64 6500u64
+```
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -193,7 +209,7 @@ leo run buy 10u64 6500u64
   },
   _nonce: 3531571411807694740703527275423909157759909014874184706891750947418211121213group.public
 }
-
+```
 handle deal
 ```bash
 leo run deal "{
@@ -281,6 +297,7 @@ leo run deal "{
   },
   _nonce: 3531571411807694740703527275423909157759909014874184706891750947418211121213group.public
 }"
+```
 ```
 Outputs
 
@@ -374,7 +391,7 @@ Outputs
   },
   _nonce: 2028477193996344814854320790916508205171467778876905304712745395658314087938group.public
 }
-
+```
 
 
 
