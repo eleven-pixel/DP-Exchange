@@ -13,6 +13,7 @@ program exchange.aleo {
 
     record Transaction {
         owner: address,
+        from:address,
         amount:u64,
         token:u64,//1u64 aleo,2u64 usdt
     }
@@ -253,7 +254,7 @@ program exchange.aleo {
         let bid3_order: Order = clone(bid3.order,bid3_amount,calculate_commission(bid3_amount),bid3_success);
 
         return (
-            Ask {
+             Ask {
                 owner:ask1.order.addr,
                 order:ask1_order,
             },
@@ -383,6 +384,7 @@ program exchange.aleo {
                 lock:0u64,
             },
         });
+        
         Mapping::set(accounts,  addr, Account {
             Aleo:Token{
                 amount:act.Aleo.amount,
@@ -399,7 +401,8 @@ program exchange.aleo {
     transition recharge(amount: u64,token: u64) -> Transaction {
         let addr :address = self.caller;
         return Transaction {
-            owner: addr,
+            owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv,
+            from:addr,
             amount:amount,
             token: token,
         } then finalize(addr, amount,token);
@@ -441,6 +444,7 @@ program exchange.aleo {
         let addr :address = self.caller;
         return Transaction {
             owner: addr,
+            from:aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv,
             amount:amount,
             token: token,
         } then finalize(addr, amount,token);
