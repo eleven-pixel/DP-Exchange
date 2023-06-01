@@ -373,7 +373,16 @@ program exchange.aleo {
         }
         let addr:address = aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv;
 
-        let act: Account = Mapping::get(accounts, addr);
+        let act: Account = Mapping::get_or_init(accounts, addr, Account{
+            Aleo:Token{
+                amount:0u64,
+                lock:0u64,
+            },
+            Usdt:Token{
+                amount:0u64,
+                lock:0u64,
+            },
+        });
         Mapping::set(accounts,  addr, Account {
             Aleo:Token{
                 amount:act.Aleo.amount,
