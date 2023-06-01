@@ -11,6 +11,7 @@ aleo1d937cyk52y9zjdveu342hy8epqd6lj3dgrregerxweer09a0zurqez8h4f
 ```bash
 leo run recharge 100u64 1u64
 ```
+```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
   from: aleo1d937cyk52y9zjdveu342hy8epqd6lj3dgrregerxweer09a0zurqez8h4f.private,
@@ -18,6 +19,7 @@ leo run recharge 100u64 1u64
   token: 1u64.private,
   _nonce: 378989960020779658265135821111662091293488669676620605889199201338288419070group.public
 }
+```
 ```bash
 leo run sell 10u64 8000u64
 ```
