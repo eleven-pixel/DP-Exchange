@@ -11,6 +11,7 @@ aleo1d937cyk52y9zjdveu342hy8epqd6lj3dgrregerxweer09a0zurqez8h4f
 ```bash
 leo run recharge 100u64 1u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -23,6 +24,7 @@ leo run recharge 100u64 1u64
 ```bash
 leo run sell 10u64 8000u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -45,6 +47,7 @@ aleo1pd4cjynclvdggxssen4mtkq3k5n05yjzheq4znymm6fpww8dtyyq4x2g2y
 ```bash
 leo run recharge 100u64 1u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -57,6 +60,7 @@ leo run recharge 100u64 1u64
 ```bash
 leo run sell 10u64 9000u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -79,6 +83,7 @@ aleo130tgenu0mm5q8w4aeuyh0tasn0upjvuw79f95rvkgegqcexx3vrs200myj
 ```bash
 leo run recharge 100u64 1u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -91,6 +96,7 @@ leo run recharge 100u64 1u64
 ```bash
 leo run sell 10u64 10000u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -113,6 +119,7 @@ aleo1xc7czkvea9ahdehlnfhyh4z3es3dwzrnara7dtpeg02qw9whaqzqpwdmku
 ```bash
 leo run recharge 1000000u64 2u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -125,6 +132,7 @@ leo run recharge 1000000u64 2u64
 ```bash
 leo run buy 10u64 8500u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -147,6 +155,7 @@ aleo14eeuqt6r4rwv48qfn8zw0u88dp492enusfzqwnd3nqnelmjnlq9q9xtmtc
 ```bash
 leo run recharge 1000000u64 2u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -159,6 +168,7 @@ leo run recharge 1000000u64 2u64
 ```bash
 leo run buy 10u64 7500u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -181,6 +191,7 @@ aleo1t6dckz3q43cjxzg9m5pn5w48x346qdpjz39nwy9en3yqczvhzczsyqhjdd
 ```bash
 leo run recharge 1000000u64 2u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -193,6 +204,7 @@ leo run recharge 1000000u64 2u64
 ```bash
 leo run buy 10u64 6500u64
 ```
+Outputs
 ```
 {
   owner: aleo1000v3gwn7p8qcc72hzww7x9q0p2ez96scgrwyc8feajq5a4efsqsfhq2uv.private,
@@ -298,9 +310,8 @@ leo run deal "{
   _nonce: 3531571411807694740703527275423909157759909014874184706891750947418211121213group.public
 }"
 ```
-```
 Outputs
-
+```
  • {
   owner: aleo1d937cyk52y9zjdveu342hy8epqd6lj3dgrregerxweer09a0zurqez8h4f.private,
   order: {
