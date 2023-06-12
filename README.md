@@ -1,5 +1,5 @@
 # An exchange in Leo.
-
+<img src="/DP-01.png" alt="screenshot"/>
 ## How to Build
 
 To compile this Leo program, run:
